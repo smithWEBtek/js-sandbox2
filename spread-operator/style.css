@@ -2,7 +2,6 @@
   color: rgb(255, 127, 155);
   border: 3px dashed green;
   ;
-  /* background-attachment: './dog.jpeg'; */
 }
 
 button {
@@ -14,4 +13,10 @@ button {
 
 .dark {
   color: blue;
+}
+
+.background {
+  background-image: url('dog.jpeg');
+  background-repeat: no-repeat;
+  width: 80%;
 }

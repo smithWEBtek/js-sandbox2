@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', (event) => {
   setBackground();
   answerButton();
-  resetButtonText();
+  // resetButtonText();
   console.log('dominic is here')
 })
 const mainDiv = document.querySelector('#main')
@@ -16,16 +16,17 @@ const answerButton = () => {
     event.target.innerHTML = "<p class='dark'>You right clicked.</p>"
   })
   answerBtn.addEventListener('click', (event) => {
-    event.target.innerHTML = "<p class='dark'>You clicked me.</p>"
+    // event.target.textContent = "You clicked me."
+    event.target.innerHTML += "<p class='dark'>You clicked me.</p>"
   })
-  answerBtn.addEventListener('mouseover', (event) => {
-    event.target.innerHTML = "<p class='dark'>You hovered.</p>"
-  })
+  // answerBtn.addEventListener('mouseover', (event) => {
+  //   event.target.innerHTML = "<p class='dark'>You hovered.</p>"
+  // })
 }
 
-const resetButtonText = (event) => {
-  let mainDiv = document.getElementById('main')
-  mainDiv.addEventListener('click', (event) => {
-    event.target.innerHTML = ""
-  })
-}
+// const resetButtonText = (event) => {
+//   let mainDiv = document.getElementById('answer')
+//   mainDiv.addEventListener('click', (event) => {
+//     event.target.innerHTML = "Are we on?"
+//   })
+// }
