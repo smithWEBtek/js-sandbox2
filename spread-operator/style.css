@@ -1,0 +1,17 @@
+.main {
+  color: rgb(255, 127, 155);
+  border: 3px dashed green;
+  ;
+  /* background-attachment: './dog.jpeg'; */
+}
+
+button {
+  border-radius: 12px;
+  border: 1ps solid green;
+  margin: 3rem;
+  width: 15rem;
+}
+
+.dark {
+  color: blue;
+}

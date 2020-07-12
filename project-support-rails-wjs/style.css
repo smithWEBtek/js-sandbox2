@@ -1,0 +1,25 @@
+
+#kickoff {
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex-direction: row;
+
+  /* justify-content:space-between; */
+  /* justify-content:start; */
+  /* justify-content:end; */
+  /* justify-content:center; */
+  /* justify-content:space-around; */
+}
+  
+
+@media(min-width:768px){
+  #kickoff {
+		display:flex;
+		/* justify-content:space-between; */
+		/* justify-content:start; */
+		/* justify-content:end; */
+		/* justify-content:center; */
+		/* justify-content:space-around; */
+	}
+}
