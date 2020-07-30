@@ -1,0 +1,11 @@
+.office {
+  border: 1px solid lightblue;
+  border-radius: 12px;
+  margin-bottom: .25rem;
+  padding: 1rem;
+  width: 50%;
+}
+
+.office:hover {
+  background-color: rgb(137, 182, 167);
+}
