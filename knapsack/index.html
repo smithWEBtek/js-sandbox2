@@ -31,14 +31,28 @@
       { c {value: 3, weight: 3}]</code>
     <br />
     <br />
-    <code>maxWeight: 8</code>
+    <code>enter max weight: 
+      <form>
+        <input type="text" id="max-weight" placeholder="enter max weight">
+        <button type="submit" id="calculate-ideal-items">get items</submit>
+      </form>
+
+    </code>
   </div>
 
   <hr />
-  <h4>items:</h4>
-  <div id="answer-div">...</div>
+  <h4>max weight entered:</h4>
+  <div id="max-weight-div">...</div>
+
+  <h4>items to load:</h4>
+  <div id="items-div">...</div>
+  
   <h4>total value of items:</h4>
   <div id="value-div">...</div>
+  
+  <h4>total weight of items:</h4>
+  <div id="weight-div">...</div>
+  
   <script src='index.js'></script>
 </body>
 
