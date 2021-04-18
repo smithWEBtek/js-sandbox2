@@ -1,53 +1,56 @@
 document.addEventListener('DOMContentLoaded', () => {
   console.log('index.js loaded ...')
-  loadKnapsack2()
-  loadResults()
+  listenForLoadKnapsack()
 })
 
-let knapsackItems = []
 let items = [
   { a: { value: 10, weight: 3 } },
   { b: { value: 6, weight: 8 } },
   { c: { value: 3, weight: 3 } }
 ]
 
-let totalValue = 0
-let totalWeight = 0
-let maxWeight = 8
-let answerDiv = document.getElementById('answer-div')
+let maxWeightDiv = document.getElementById('max-weight-div')
+let itemsDiv = document.getElementById('items-div')
 let valueDiv = document.getElementById('value-div')
+let weightDiv = document.getElementById('weight-div')
 
-const loadKnapsack1 = () => {
-  let sortedItems = items.sort((a, b) => a.value < b.value ? -1 : 1)
-  for (let item of sortedItems) {
-    let key = Object.keys(item)[0]
-    if ((totalWeight += item[key].weight) <= maxWeight) {
-      totalWeight += item[key].weight
-      totalValue += item[key].value
-      console.log('totalWeight: ', totalWeight)
-      console.log('totalValue: ', totalValue)
-      knapsackItems.push(key)
-    }
-  }
+const listenForLoadKnapsack = () => {
+  let totalValue = 0
+  let totalWeight = 0
+  let maxWeight = 0
+  
+  itemsDiv.value = []
+  valueDiv.value = 0
+  weightDiv.value = 0
+
+  let submit = document.getElementById('calculate-ideal-items')
+  submit.addEventListener('click', () => {
+    maxWeight = parseInt(document.querySelector('#max-weight').value)
+    console.log('form max weight entered: ', maxWeight)
+    loadKnapsack(maxWeight, totalValue, totalWeight)
+    maxWeight = parseInt(document.querySelector('#max-weight').value = '')
+  })
 }
 
-const loadKnapsack2 = () => {
-  let sortedItems = items.sort((a, b) => a.value < b.value ? -1 : 1)
+const loadKnapsack = (wt, totalValue, totalWeight) => {
+  let sortedItems = items.sort((a, b) => a.weight > b.weight ? 1 : -1)
+  let knapsackItems = []
+  
   for (let i = 0; i < sortedItems.length; i++) {
     let key = Object.keys(sortedItems[i])[0]
 
-    if ((totalWeight += sortedItems[i][key].weight) <= maxWeight) {
+    if ((totalWeight + sortedItems[i][key].weight) <= wt) {
       totalWeight += sortedItems[i][key].weight
       totalValue += sortedItems[i][key].value
-      console.log('totalWeight: ', totalWeight)
-      console.log('totalValue: ', totalValue)
       knapsackItems.push(key)
     }
   }
+  loadResults(wt, knapsackItems, totalValue, totalWeight)
 }
 
-const loadResults = () => {
-  answerDiv.innerText = knapsackItems
+const loadResults = (maxWeightEnetered, knapsackItems, totalValue, totalWeight) => {
+  maxWeightDiv.innerText = maxWeightEnetered
+  itemsDiv.innerText = knapsackItems.join(' ')
   valueDiv.innerText = totalValue
+  weightDiv.innerText = totalWeight
 }
-  
