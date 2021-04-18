@@ -40,6 +40,10 @@ const loadKnapsack = (wt, totalValue, totalWeight) => {
     let key = Object.keys(sortedItems[i])[0]
 
     if ((totalWeight + sortedItems[i][key].weight) <= wt) {
+
+// need to implement reduce here
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+
       totalWeight += sortedItems[i][key].weight
       totalValue += sortedItems[i][key].value
       knapsackItems.push(key)
