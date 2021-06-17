@@ -1,0 +1,22 @@
+.main {
+  color: rgb(255, 127, 155);
+  border: 3px dashed green;
+  ;
+}
+
+button {
+  border-radius: 12px;
+  border: 1ps solid green;
+  margin: 3rem;
+  width: 15rem;
+}
+
+.dark {
+  color: blue;
+}
+
+.background {
+  background-image: url('dog.jpeg');
+  background-repeat: no-repeat;
+  width: 80%;
+}
