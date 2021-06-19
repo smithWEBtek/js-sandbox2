@@ -1,0 +1,12 @@
+.main {
+    border: 1px solid black;
+    border-radius: 12px;
+    height: 600px;
+    width: 80%;
+    margin: auto;
+    background-color: light-gray;
+}
+
+.title {
+    padding: 1rem;
+}
