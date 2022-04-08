@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import NewPostForm from './NewPost';
+
 import styles from './Posts.module.css';
 
 class Posts extends Component {
@@ -24,6 +26,11 @@ class Posts extends Component {
     })
   }
 
+  onPostSubmit = (data) =>{
+    console.log('data: ', data)
+    debugger;
+  }
+
   render() {
 
     const renderedPosts = this.state.posts.map((post, index) => {
@@ -39,6 +46,7 @@ class Posts extends Component {
 
     return (
       <>
+        <NewPostForm handlePostSubmit={this.onPostSubmit} />
         {renderedPosts}
       </>
     )

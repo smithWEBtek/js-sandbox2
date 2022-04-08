@@ -1,0 +1,20 @@
+.form {
+  border: 1px solid darkgreen;
+  border-radius: 12px;
+  margin: auto;
+  padding: 2rem;
+  width: 40%;
+}
+
+.formElement {
+  display: block;
+  margin: auto;
+}
+
+.formElementSubmit {
+  border: 2px solid green;
+  border-radius: 12px;
+  display: block;
+  margin: auto;
+  margin-top: 1rem;
+}
