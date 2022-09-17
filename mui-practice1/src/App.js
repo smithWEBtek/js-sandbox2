@@ -19,6 +19,7 @@ function App() {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
+          data-testid="demo-simple-select"
           value={age}
           label="Age"
           onChange={handleChange}
