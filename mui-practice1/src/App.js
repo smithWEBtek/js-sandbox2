@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
-import './App.css';
+import classes from './App.module.css';
 import { FormControl, FormHelperText, InputLabel, MenuItem, Select } from '@mui/material';
 
 function App() {
@@ -12,25 +12,29 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className={classes.App}>
       <Button variant="contained">Hello World</Button>
-      <FormControl>
-        <InputLabel id="demo-simple-select-label">Age</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          data-testid="demo-simple-select"
-          value={age}
-          label="Age"
-          onChange={handleChange}
-        >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-        {age === 0 ? <FormHelperText>select</FormHelperText> : ''}
-      </FormControl>
-    </div>
+      <div className={classes.FormControlContainer}>
+        <FormControl className={classes.FormControl}>
+          <InputLabel id="demo-simple-select-label">Age</InputLabel>
+          <Select
+            className={classes.Select}
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            data-testid="demo-simple-select"
+            value={age}
+            label="Age"
+            onChange={handleChange}
+          >
+            <MenuItem value={0}></MenuItem>
+            <MenuItem value={10}>Ten</MenuItem>
+            <MenuItem value={20}>Twenty</MenuItem>
+            <MenuItem value={30}>Thirty</MenuItem>
+          </Select>
+          {age === 0 ? <FormHelperText>select</FormHelperText> : ''}
+        </FormControl>
+      </div >
+    </div >
   );
 }
 
