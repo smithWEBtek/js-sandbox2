@@ -1,0 +1,13 @@
+.FormControlContainer {
+  /* outline: none; */
+  display: block;
+  margin-top: 16px;
+}
+
+.Select {
+  /* outline: none; */
+  width: 150px;
+  /* border: 1px solid gray; */
+  /* border-radius: 3px; */
+  margin-bottom: 0;
+}
