@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import './App.css';
-import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
+import { FormControl, FormHelperText, InputLabel, MenuItem, Select } from '@mui/material';
 
 function App() {
 
@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <Button variant="contained">Hello World</Button>
-      <FormControl fullWidth>
+      <FormControl>
         <InputLabel id="demo-simple-select-label">Age</InputLabel>
         <Select
           labelId="demo-simple-select-label"
@@ -28,6 +28,7 @@ function App() {
           <MenuItem value={20}>Twenty</MenuItem>
           <MenuItem value={30}>Thirty</MenuItem>
         </Select>
+        {age === 0 ? <FormHelperText>select</FormHelperText> : ''}
       </FormControl>
     </div>
   );
