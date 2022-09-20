@@ -8,6 +8,7 @@ function App() {
     <div className={classes.App}>
       <Button variant="contained">Hello World</Button>
       <DropdownSelect
+        data-testid='ddselect'
         selections={['cat', 'bird', 'dog', 'fish']}
       />
     </div >
