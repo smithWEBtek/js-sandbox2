@@ -2,6 +2,7 @@ import { rest } from 'msw'
 
 export const handlers = [
   rest.get('/find-friends', (req, res, ctx) => {
+    console.log('handlers find-friends called')
     return res(
       ctx.status(200),
       ctx.json([

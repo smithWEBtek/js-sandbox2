@@ -9,10 +9,10 @@ test('renders find-friend link', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
-test('link is clickable', async () => {
+test('link is clickable', () => {
   render(<App />);
   const linkElement = screen.getByText(/thor/i);
-  await userEvent.click(linkElement)
-  expect(await window.location.href).toEqual(
+  userEvent.click(linkElement)
+  expect(window.location.href).toEqual(
     'http://localhost/');
 });
