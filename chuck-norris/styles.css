@@ -1,0 +1,8 @@
+.chuck {
+  color:  RGB(198, 0, 0);
+}
+
+html {
+  border: 1px solid chucknorris;
+  padding: 32px;
+}
